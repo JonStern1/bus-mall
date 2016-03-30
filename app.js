@@ -1,10 +1,8 @@
 
-//Trying to put images into an array
-var imagesArray = [];
+var imageObjectArray = [];
 var clicks = 0;
 var bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, tauntaun, unicorn, usb, waterCan, wineGlass;
-//Attempting to create random image picker
-//I didn't note this well. Trying to tie in random # with a variable
+
 function ImageConstructor(name, filePath) {
   this.name = name;
   this.filePath = filePath;
@@ -41,25 +39,63 @@ usb = new ImageConstructor('usb', 'img/usb.gif');
 waterCan = new ImageConstructor('waterCan', 'img/water-can.jpg');
 wineGlass = new ImageConstructor('wineGlass', 'img/wine-glass.jpg');
 
-imageArray.push(bag);
-imageArray.push(banana);
-imageArray.push(bathroom);
-imageArray.push(boots);
-imageArray.push(breakfast);
-imageArray.push(bubblegum);
-imageArray.push(chair);
-imageArray.push(cthulhu);
-imageArray.push(dogDuck);
-imageArray.push(dragon);
-imageArray.push(pen);
-imageArray.push(petSweep);
-imageArray.push(scissors);
-imageArray.push(shark);
-imageArray.push(sweep);
-imageArray.push(tauntaun);
-imageArray.push(unicorn);
-imageArray.push(usb);
-imageArray.push(waterCan);
-imageArray.push(wineGlass);
+imageObjectArray.push(bag);
+imageObjectArray.push(banana);
+imageObjectArray.push(bathroom);
+imageObjectArray.push(boots);
+imageObjectArray.push(breakfast);
+imageObjectArray.push(bubblegum);
+imageObjectArray.push(chair);
+imageObjectArray.push(cthulhu);
+imageObjectArray.push(dogDuck);
+imageObjectArray.push(dragon);
+imageObjectArray.push(pen);
+imageObjectArray.push(petSweep);
+imageObjectArray.push(scissors);
+imageObjectArray.push(shark);
+imageObjectArray.push(sweep);
+imageObjectArray.push(tauntaun);
+imageObjectArray.push(unicorn);
+imageObjectArray.push(usb);
+imageObjectArray.push(waterCan);
+imageObjectArray.push(wineGlass);
 
 //functions to display the data. Manipulate the dom. Random number.
+function loadImage(){
+  var randomImage1 = Math.floor((Math.random() * 19) + 1);
+  var randomImage2 = Math.floor((Math.random() * 19) + 1);
+  var randomImage3 = Math.floor((Math.random() * 19) + 1);
+
+  var threeImageDiv = document.getElementById('three-images');
+
+  // create three image tags
+  // add them to the div with id="threeImages"
+
+  // create an image tag
+  var imageOne = document.createElement('img');
+  var imageTwo = document.createElement('img');
+  var imageThree = document.createElement('img');
+  // set its src attribute to a random image objects file path
+  imageOne.setAttribute('src', imageObjectArray[randomImage1].filePath);
+  imageTwo.setAttribute('src', imageObjectArray[randomImage2].filePath);
+  imageThree.setAttribute('src', imageObjectArray[randomImage3].filePath);
+  // append the image to the page
+  threeImageDiv.appendChild(imageOne);
+  threeImageDiv.appendChild(imageTwo);
+  threeImageDiv.appendChild(imageThree);
+//put counter here?
+};
+
+function ButtonConstructor(buttonName, buttonFilePath){
+  this.buttonName = buttonName;
+  this.buttonFilePath = buttonFilePath;
+}
+
+tenMoreClicks = new ButtonConstructor ('tenMoreClicks', 'image/htmlButton.jpeg');
+giveMeData = new ButtonConstructor ('giveMeData', 'image/htmlButton.jpeg');
+//if (imageReload === 25) {
+
+  // var imageTwo = document.createElement('img');
+  // var imageThree = document.createElement('img');
+
+loadImage();
