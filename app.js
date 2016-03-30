@@ -1,93 +1,65 @@
 
-var el1 = document.getElementById('imageOne');
-var el2 = document.getElementById('imageTwo') ;
-var el3 = document.getElementById('imageThree');
-var el4 = document.getElementById('imageFour');
-var el5 = document.getElementById('imageFive');
-var el6 = document.getElementById('imageSix');
-var el7 = document.getElementById('imageSeven');
-var el8 = document.getElementById('imageEight');
-var el9 = document.getElementById('imageNine');
-var el10 = document.getElementById('imageTen');
-var el11 = document.getElementById('imageEleven');
-var el12 = document.getElementById('imageTwelve');
-var el13 = document.getElementById('imageThirteen');
-var el14 = document.getElementById('imageFourteen');
-var el15 = document.getElementById('imageFifteen');
-var el16 = document.getElementById('imageSixteen');
-var el17 = document.getElementById('imageSeventeen');
-var el18 = document.getElementById('imageEighteen');
-var el19 = document.getElementById('imageNineteen');
-var el20 = document.getElementById('imageTwenty');
-
-var images = [el1, el2, el3, el4, el5, el6, el7, el8, el9, el10, el11, el12, el13, el14, el15, el16, el17, el18, el19, el20];
-
-var randomImage = Math.floor((Math.random() * 19) + 1);
-var inputImage = imgages[randomImage];
-
-function postImage() {
-//trying to get random image to HTML div class first, second, thirdImage
-//Do I need a counter, or just push 3 times?
-}
-function imageNumberAppears() {
-  //counter for number of image appearances
-  //if firstImage || secondImage || thirdImage for el count up
+//Trying to put images into an array
+var imagesArray = [];
+var clicks = 0;
+var bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, tauntaun, unicorn, usb, waterCan, wineGlass;
+//Attempting to create random image picker
+//I didn't note this well. Trying to tie in random # with a variable
+function ImageConstructor(name, filePath) {
+  this.name = name;
+  this.filePath = filePath;
+  this.numberDisplayed = 0;
+  this.numberClicked = 0;
 }
 
-function clickPercentage() {
-  // times clicked divided by imageNumberAppears
-  // do I put event listener for click in here?
-}
-function DataCollector(image, numberAppearances, clickPercent) {
-  this.image = image;
-  this.numberAppearances = imageNumberAppears;
-  this.clickPercent = clickPercentage;
+ImageConstructor.prototype.displayIncrementor = function(){
+  this.numberDisplayed++;
 };
 
+ImageConstructor.prototype.clickIncrementor = function(){
+  this.numberClicked++;
+};
 
-var imageAppearances =
+bag = new ImageConstructor('bag', 'img/bag.jpg');
+banana = new ImageConstructor('banana', 'img/banana.jpg');
+bathroom = new ImageConstructor('bathroom', 'img/bathroom.jpg');
+boots = new ImageConstructor('boots', 'img/boots.jpg');
+breakfast = new ImageConstructor('breakfast', 'img/breakfast.jpg');
+bubblegum = new ImageConstructor('bubblegum', 'img/bubblegum.jpg');
+chair = new ImageConstructor('chair', 'img/chair.jpg');
+cthulhu = new ImageConstructor('cthulhu', 'img/cthulhu.jpg');
+dogDuck = new ImageConstructor('dogDuck', 'img/dog-duck.jpg');
+dragon = new ImageConstructor('dragon', 'img/dragon.jpg');
+pen = new ImageConstructor('pen', 'img/pen.jpg');
+petSweep = new ImageConstructor('petSweep', 'img/pet-sweep.jpg');
+scissors = new ImageConstructor('scissors', 'img/scissors.jpg');
+shark = new ImageConstructor('shark', 'img/shark.jpg');
+sweep = new ImageConstructor('sweep', 'img/sweep.png');
+tauntaun = new ImageConstructor('tauntaun', 'img/tauntaun.jpg');
+unicorn = new ImageConstructor('unicorn', 'img/unicorn.jpg');
+usb = new ImageConstructor('usb', 'img/usb.gif');
+waterCan = new ImageConstructor('waterCan', 'img/water-can.jpg');
+wineGlass = new ImageConstructor('wineGlass', 'img/wine-glass.jpg');
 
+imageArray.push(bag);
+imageArray.push(banana);
+imageArray.push(bathroom);
+imageArray.push(boots);
+imageArray.push(breakfast);
+imageArray.push(bubblegum);
+imageArray.push(chair);
+imageArray.push(cthulhu);
+imageArray.push(dogDuck);
+imageArray.push(dragon);
+imageArray.push(pen);
+imageArray.push(petSweep);
+imageArray.push(scissors);
+imageArray.push(shark);
+imageArray.push(sweep);
+imageArray.push(tauntaun);
+imageArray.push(unicorn);
+imageArray.push(usb);
+imageArray.push(waterCan);
+imageArray.push(wineGlass);
 
-var ballard = new PizzaLocation('ballard')
-ballard.pushHourlyData(new HourlyData('8:00 am', 0, 4, 0, 4));
-ballard.pushHourlyData(new HourlyData('9:00 am', 0, 4, 0, 4));
-ballard.pushHourlyData(new HourlyData('10:00 am', 0, 4, 0, 4));
-ballard.pushHourlyData(new HourlyData('11:00 am', 0, 4, 0, 4));
-ballard.pushHourlyData(new HourlyData('12:00 pm', 0, 4, 0, 4));
-/*function DataCollector(image, imageSource, numberAppearances, clickPercent) {
-  this.image = image;
-  this.imageSource = imageSource;
-  this.numberAppearances = numberAppearances;
-  this.clickPercent = clickPercent;
-
-DataCollector.prototype.rendertopage = function() {}
-}
-
-function userClick(event){
-  (globalTotalClicks < 25, globalTotalClicks ++);
-  console.log('event.target', event.target);
-  if globalTotalClicks < 5) {
-    deleteImages(imgOne, imgTwo, imgThree);
-    displayThreeImages(imgOne, imgTwo, imgThree);
-  }
-else    {
-  deleteImages(imgOne, imgTwo, imgThree);
-  alert('you have clicked 25 times');
-}
-for (var i =0; i <imageDatatArray.length; i++){
-  if(imageDataArray[i], imgSrc === currentImgSrc){
-    imageDataArray[i].numOfClicks++;
-  }
-}
-}
-
-function handleImageClick(event){
-  console.log('event.target: ', event.target);
-  console.log('hello from handleImageClick event handler.');
-}
-
-var trackImages = document.getElementsByClassName('track-images');
-
-for (var i = 0; i < trackImages.length; i++){
-  trackImages[i].addEventListener('click', handleImageClick);
-}*/
+//functions to display the data. Manipulate the dom. Random number.
