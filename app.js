@@ -1,6 +1,18 @@
-var randomImage = //image from array
+
+var images;
+images = [imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine, imageTen, imageEleven, imageTwelve, imageThirteen, imageFourteen, imageFifteen, imageSixteen, imageSeventeen, imageEighteen, imageNineteen, imageTwenty];
+
+var randomImage = Math.floor((Math.random() * 19) + 1);
+var inputImage = imgages[randomImage];
 
 function DataCollector(image, imageSource, numberAppearances, clickPercent) {
+  this.image = image;
+  this.imageSource = imageSource;
+  this.numberAppearances = numberAppearances;
+  this.clickPercent = clickPercent;
+};
+
+/*function DataCollector(image, imageSource, numberAppearances, clickPercent) {
   this.image = image;
   this.imageSource = imageSource;
   this.numberAppearances = numberAppearances;
@@ -36,4 +48,4 @@ var trackImages = document.getElementsByClassName('track-images');
 
 for (var i = 0; i < trackImages.length; i++){
   trackImages[i].addEventListener('click', handleImageClick);
-}
+}*/
